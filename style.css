@@ -114,7 +114,7 @@ body {
 .content-section .flag-block.red {
   background-color: #EF4135;
 }
-<<<<<<< HEAD
+
 .destinations-hero {
   height: 500px;
   background-image: url('imgs/city\ of\ france.gif');
@@ -170,7 +170,7 @@ body {
 
 .form-check-input {
   margin-top: 0.5rem;
-=======
+}
 .destinations-section {
   background-color: #f8f9fa;
   padding: 50px 0;
@@ -196,5 +196,5 @@ body {
   font-size: 1rem;
   color: #666;
   line-height: 1.6;
->>>>>>> 31bbd4d5ce8633454d11061dadaf150b87121c12
+
 }
