@@ -2,20 +2,25 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #f8f9fa;
 }
+
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
+
 .navbar-brand {
   color: #000 !important;
   font-weight: bold;
 }
+
 .nav-link {
   color: #000 !important;
 }
+
 .nav-link:hover {
   color: #007bff !important;
 }
+
 .hero-section {
   background: url('imgs/city\ of\ france.gif') no-repeat center center;
   background-size: cover;
@@ -24,22 +29,26 @@ body {
   text-align: center;
   position: relative;
 }
+
 .hero-section h1 {
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .hero-section .subtitle {
   font-size: 1.5rem;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
 }
+
 .hero-section .lead {
   font-size: 1.2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   margin-bottom: 30px;
 }
+
 .hero-section .btn {
   background-color: #ffcc00;
   color: #000;
@@ -47,31 +56,38 @@ body {
   border: none;
   text-transform: uppercase;
 }
+
 .hero-section .btn:hover {
   background-color: #e6b800;
 }
+
 .card {
   border: none;
   transition: transform 0.3s;
 }
+
 .card:hover {
   transform: scale(1.05);
 }
+
 .card img {
   height: 200px;
-  width: 200px;
+  width: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto;
+  border-radius: 0;
+  margin: 0;
 }
+
 .card-title {
   color: #000;
   font-weight: bold;
   margin-top: 15px;
 }
+
 .card-text {
   color: #666;
 }
+
 .map-section {
   background-color: #e9ecef;
   height: 300px;
@@ -79,19 +95,23 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .map-section iframe {
   width: 100%;
   height: 300px;
 }
+
 .content-section {
   background-color: #fff;
   padding: 50px 0;
 }
+
 .content-section h2 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .content-section p {
   font-size: 1rem;
   color: #666;
@@ -99,18 +119,22 @@ body {
   margin: 0 auto;
   max-width: 800px;
 }
+
 .content-section .flag-blocks {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
+
 .content-section .flag-block {
   width: 100px;
   height: 60px;
 }
+
 .content-section .flag-block.blue {
   background-color: #0055A4;
 }
+
 .content-section .flag-block.red {
   background-color: #EF4135;
 }
@@ -171,30 +195,200 @@ body {
 .form-check-input {
   margin-top: 0.5rem;
 }
+
 .destinations-section {
   background-color: #f8f9fa;
   padding: 50px 0;
 }
+
 .destination-card {
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 20px;
   margin-bottom: 20px;
 }
+
 .destination-card img {
   width: 100%;
   height: auto;
   max-height: 200px;
   object-fit: cover;
 }
+
 .destination-card h3 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .destination-card p {
   font-size: 1rem;
   color: #666;
   line-height: 1.6;
+}
 
+/* New styles for meals and desserts sections */
+.meals, .desserts {
+  padding: 50px 0;
+}
+
+.meals h2, .desserts h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.meal-card, .dessert-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.meal-card:hover, .dessert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.meal-card .card-img-top, .dessert-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.meal-card .card-body, .dessert-card .card-body {
+  padding: 20px;
+}
+
+.meal-card .card-title, .dessert-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.meal-card .card-text, .dessert-card .card-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  background-color: #0055A4;
+  border-color: #0055A4;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #EF4135;
+  border-color: #EF4135;
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background-color: #0055A4;
+  color: #fff;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-body {
+  font-size: 1rem;
+  color: #333;
+}
+
+.modal-body h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.modal-body ul, .modal-body ol {
+  margin-bottom: 20px;
+}
+
+.modal-body li {
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* New styles for activities and cultural experiences sections */
+.activities, .cultural-experiences {
+  padding: 50px 0;
+}
+
+.activities h2, .cultural-experiences h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.activity-card, .experience-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.activity-card:hover, .experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.activity-card .card-img-top, .experience-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.activity-card .card-body, .experience-card .card-body {
+  padding: 20px;
+}
+
+.activity-card .card-title, .experience-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.activity-card .card-text, .experience-card .card-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.travel-plan {
+  padding: 50px 0;
+}
+
+.travel-plan h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.list-group-item {
+  font-size: 1rem;
+  color: #333;
+}
+
+#clearPlan {
+  background-color: #EF4135;
+  border-color: #EF4135;
+}
+
+#clearPlan:hover {
+  background-color: #0055A4;
+  border-color: #0055A4;
 }
