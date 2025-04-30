@@ -92,7 +92,6 @@ function showRecipe() {
 window.onload = function() {
     loadGallery();
 };
-// Start Script for food section
 document.addEventListener('DOMContentLoaded', () => {
     const recipeButtons = document.querySelectorAll('.view-recipe');
     const recipeContent = document.getElementById('recipeContent');
@@ -251,9 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-// End Script for food section
-
-// Start Script for Things to do section
 document.addEventListener('DOMContentLoaded', () => {
     const activityButtons = document.querySelectorAll('.view-details');
     const activityContent = document.getElementById('activityContent');
@@ -397,4 +393,3 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTravelPlan();
     });
 });
-// End Script for Things to do section
