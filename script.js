@@ -3,8 +3,20 @@ document.addEventListener("DOMContentLoaded", function() {
     factContainer.className = "text-center mt-3";
     const randomFact = facts[Math.floor(Math.random() * facts.length)];
     factContainer.textContent = "Did you know? " + randomFact;
-    document.querySelector(".hero-section .container").appendChild(factContainer);
+    document.querySelector(".hero-section .container")?.appendChild(factContainer);
+
+    // Initialize gallery modal functionality
+    const galleryLinks = document.querySelectorAll('.gallery-link');
+    galleryLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            modalImage.src = link.dataset.img;
+            modalCaption.textContent = link.dataset.caption;
+        });
+    });
 });
+
 function exploreNow() {
     const hour = new Date().getHours();
     let greeting;
@@ -19,6 +31,7 @@ function exploreNow() {
 
     alert(greeting);
 }
+
 let currentGallerySet = 0;
 const galleryImages = [
     [
@@ -35,7 +48,7 @@ const galleryImages = [
 
 function loadGallery() {
     const gallery = document.getElementById("gallery");
-    if (gallery) {
+    if (gallery && !gallery.querySelector('.gallery-link')) { // Only load dynamic gallery if static gallery-links are absent
         gallery.innerHTML = "";
         galleryImages[currentGallerySet].forEach((src, index) => {
             const col = document.createElement("div");
@@ -50,9 +63,7 @@ function changeGallery() {
     currentGallerySet = (currentGallerySet + 1) % galleryImages.length;
     loadGallery();
 }
-function exploreNow() {
-    alert("Welcome to your French adventure! Let's explore France together.");
-}
+
 function changeVideo() {
     const videoSelect = document.getElementById("videoSelect");
     const cultureVideo = document.getElementById("cultureVideo");
@@ -69,6 +80,7 @@ function changeVideo() {
         cultureVideo.src = src;
     }
 }
+
 function showRecipe() {
     const recipeSelect = document.getElementById("recipeSelect");
     const recipeContent = document.getElementById("recipeContent");
@@ -89,9 +101,7 @@ function showRecipe() {
         recipeContent.innerHTML = `<h4>${title}</h4><p>${description}</p>`;
     }
 }
-window.onload = function() {
-    loadGallery();
-};
+
 document.addEventListener('DOMContentLoaded', () => {
     const recipeButtons = document.querySelectorAll('.view-recipe');
     const recipeContent = document.getElementById('recipeContent');
@@ -250,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     const activityButtons = document.querySelectorAll('.view-details');
     const activityContent = document.getElementById('activityContent');
@@ -391,5 +402,78 @@ document.addEventListener('DOMContentLoaded', () => {
             checkbox.checked = false;
         });
         updateTravelPlan();
+    });
+});
+
+//Destination page specific changes
+
+// Initialize city modal functionality for destinations page
+const cityCards = document.querySelectorAll('.destination-card');
+const cityData = {
+    paris: {
+        title: 'Paris',
+        description: 'Paris is the capital city of France, located in the northern-central part of the country. It’s one of the most iconic cities in the world, known for its rich history, art, fashion, and architecture.',
+        funFact: 'The Eiffel Tower was originally intended to be a temporary structure for the 1889 World’s Fair.',
+        image: 'imgs/paris1.jpeg'
+    },
+    lyon: {
+        title: 'Lyon',
+        description: 'Lyon is a major city in southeastern France, known for its rich history, gastronomy, and vibrant culture.',
+        funFact: 'Lyon is considered the gastronomic capital of France, home to many Michelin-starred restaurants.',
+        image: 'imgs/lyon1.jpeg'
+    },
+    marseille: {
+        title: 'Marseille',
+        description: 'Marseille is a port city in southern France on the Mediterranean coast. It’s the second-largest city in France and the capital of the Provence-Alpes-Côte d’Azur region.',
+        funFact: 'Marseille is the oldest city in France, founded around 600 BC by Greek settlers.',
+        image: 'imgs/marseille1.jpeg'
+    },
+    bordeaux: {
+        title: 'Bordeaux',
+        description: 'Bordeaux, in southwestern France, is renowned for its wine culture, historic architecture, and vibrant riverside.',
+        funFact: 'Bordeaux produces over 700 million bottles of wine annually, making it a global wine capital.',
+        image: 'imgs/Bordeaux.jpg'
+    },
+    nice: {
+        title: 'Nice',
+        description: 'Nice, on the French Riviera, is famous for its Mediterranean beaches, colorful markets, and the scenic Promenade des Anglais.',
+        funFact: 'Nice hosts one of the largest Carnival celebrations in the world every February.',
+        image: 'imgs/Nice.jpg'
+    },
+    normandy: {
+        title: 'Normandy',
+        description: 'Normandy, in northern France, is known for its historic D-Day beaches, medieval architecture, and lush countryside.',
+        funFact: 'The famous Bayeux Tapestry, depicting the Norman Conquest, is housed in Normandy.',
+        image: 'imgs/Normandy.jpg'
+    },
+    'french-alps': {
+        title: 'French Alps',
+        description: 'The French Alps offer stunning mountain landscapes, world-class skiing, and charming alpine villages.',
+        funFact: 'Chamonix in the French Alps hosted the first Winter Olympics in 1924.',
+        image: 'imgs/FrenchAlps.jpg'
+    },
+    cannes: {
+        title: 'Cannes',
+        description: 'Cannes, on the French Riviera, is celebrated for its film festival, luxury shopping, and sandy beaches.',
+        funFact: 'The Cannes Film Festival, held annually, is one of the most prestigious film events globally.',
+        image: 'imgs/Cannes.jpg'
+    },
+    dijon: {
+        title: 'Dijon',
+        description: 'Dijon, in eastern France, is the heart of Burgundy, known for its mustard, historic palaces, and wine routes.',
+        funFact: 'Dijon’s mustard has been a culinary staple since the 14th century.',
+        image: 'imgs/Dijon.jpg'
+    }
+};
+
+cityCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const cityKey = card.dataset.city;
+        const city = cityData[cityKey];
+        document.getElementById('cityModalLabel').textContent = city.title;
+        document.getElementById('modalImage').src = city.image;
+        document.getElementById('modalTitle').textContent = city.title;
+        document.getElementById('modalDescription').textContent = city.description;
+        document.getElementById('modalFunFact').textContent = city.funFact;
     });
 });

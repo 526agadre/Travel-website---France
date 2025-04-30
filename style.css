@@ -24,6 +24,7 @@ body {
 .hero-section {
   background: url('imgs/city\ of\ france.gif') no-repeat center center;
   background-size: cover;
+  height: 200px;
   color: #fff;
   padding: 300px 0;
   text-align: center;
@@ -391,4 +392,96 @@ footer p {
 #clearPlan:hover {
   background-color: #0055A4;
   border-color: #0055A4;
+}
+
+/* Destination */
+
+/* Destinations page-specific styles */
+.destinations {
+  padding: 60px 0;
+}
+
+.destinations .destination-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destinations .destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.destinations .destination-img {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.destinations .destination-title {
+  font-size: 1.5rem;
+  color: #0055A4;
+}
+
+.destinations .destination-text {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.destinations .modal-content {
+  border-radius: 12px;
+}
+
+.destinations .modal-header {
+  background-color: #0055A4;
+  color: #fff;
+}
+
+.destinations .modal-body img {
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.destinations .modal-body h4 {
+  color: #0055A4;
+  margin-bottom: 15px;
+}
+
+.destinations .modal-body p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+/* Code for Youtube videos */
+/* New styles for video section */
+.video-section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+}
+
+.video-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.video-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-link:hover .video-img {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-link p {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 10px;
 }
